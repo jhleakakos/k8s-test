@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-deployment
+  labels:
+    app: node8s
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node8s
+  template:
+    metadata:
+      labels:
+        app: node8s
+    spec:
+      containers:
+        - name: node8s
+          image: k8s_test
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "32Mi"
+            limits:
+              cpu: "300m"
+              memory: "64Mi"
+          imagePullPolicy: Never
