@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-deployment
-  labels:
-    app: node8s
+  name: node8s-deployment
 
 spec:
   replicas: 3
@@ -17,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node8s
-          image: k8s_test
+          image: node8s
           ports:
             - containerPort: 3000
           resources:
@@ -28,3 +26,17 @@ spec:
               cpu: "300m"
               memory: "64Mi"
           imagePullPolicy: Never
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node8s-nodeport
+
+spec:
+  type: NodePort
+  selector:
+    app: node8s
+  ports:
+    - port: 3000
+      targetPort: 3000
