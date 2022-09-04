@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     build: .
-    image: k8s_test
-    container_name: k8s_test
+    image: node8s
+    container_name: node8s
     ports:
       - '3000:3000'

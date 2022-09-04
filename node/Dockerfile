@@ -4,9 +4,9 @@ EXPOSE 3000
 
 WORKDIR /usr/app/src
 
-COPY ./src/package*.json .
+COPY ./package*.json .
 RUN npm install
 
-COPY ./src/index.js .
+COPY ./index.js .
 
 CMD node index.js
