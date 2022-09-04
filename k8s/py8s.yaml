@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: py8s-deployment
+  name: py8s-d
+  labels:
+    app: py8s
 spec:
   replicas: 3
   selector:
@@ -30,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: py8s-nodeport
+  name: py8s-np
 spec:
   type: NodePort
   selector:

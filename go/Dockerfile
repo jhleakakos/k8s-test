@@ -4,7 +4,7 @@ EXPOSE 8000
 
 WORKDIR /usr/app/src
 
-COPY ./app.go .
+COPY app.go .
 RUN go build -o app app.go
 
 CMD ./app

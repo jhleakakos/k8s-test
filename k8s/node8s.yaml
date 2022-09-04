@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node8s-deployment
-
+  name: node8s-d
+  labels:
+    app: node8s
 spec:
   replicas: 3
   selector:
@@ -31,8 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: node8s-nodeport
-
+  name: node8s-np
 spec:
   type: NodePort
   selector:

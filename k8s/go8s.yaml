@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go8s-deployment
+  name: go8s-d
+  labels:
+    app: go8s
 spec:
   replicas: 3
   selector:
@@ -30,7 +32,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: go8s-nodeport
+  name: go8s-np
 spec:
   type: NodePort
   selector:
