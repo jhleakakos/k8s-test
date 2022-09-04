@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  web:
+  node:
     build: .
     image: node8s
     container_name: node8s
