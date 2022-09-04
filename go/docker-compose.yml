@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  go:
+    build: .
+    image: go8s
+    container_name: go8s
+    ports:
+      - '8000:8000'
