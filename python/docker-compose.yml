@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  flask:
+    build: .
+    image: py8s
+    container_name: py8s
+    ports:
+      - '5001:5000'
